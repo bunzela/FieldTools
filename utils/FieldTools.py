@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import sys
 import os
 import subprocess
@@ -79,7 +76,7 @@ def fkt_calc_fields(FIELDS,FIELD,XYZ,VEC,Frame,Charges,Names,Field_Components,ar
     for Atom_Index in range(0,len(Frame),1):   
 
 #### Exclude Self-residue!!! 
-        if arg_exclude_atoms <> False:
+        if arg_exclude_atoms == "False":
             if Names[Atom_Index][2] == Self_i: continue        
         else:
             if Atom_Index in arg_exclude_atoms[FIELD]: continue
@@ -259,7 +256,7 @@ def inputParser(arg):
     arg_tmp_dir       ="tmp_field/"   
     arg_target        = False
     arg_solvent       = "WAT,Na+,Cl-"
-    arg_exclude_atoms = False
+    arg_exclude_atoms = "False"
     arg_use_qmcharges = False
     arg_qm_mask       = False
     arg_qm_charges    = False
@@ -307,7 +304,7 @@ def inputParser(arg):
     print "-tmp_dir         Temporary dir        : ",arg_tmp_dir
     print "-target          Field target         : ",arg_target
     print "-arg_solvent     Non-protein residues : ",arg_solvent
-    if arg_exclude_atoms <> False:
+    if arg_exclude_atoms <> "False":
         print "-exclude_atoms   Atoms excluded       : ",arg_exclude_atoms
     else:
         print "-exclude_atoms   Atoms excluded       : All atoms of the residue defined in the first Atom for each Target."
@@ -360,7 +357,7 @@ Target_Index,FIELDS = fkt_Target_Index(Names,arg_target,FIELDS)
 #print "Field_Dict:", FIELDS,"\n"
 
 ### Load Index of Excluded Atoms
-if arg_exclude_atoms <> False: arg_exclude_atoms,_ = fkt_Target_Index(Names,arg_exclude_atoms,FIELDS)
+if arg_exclude_atoms <> "False": arg_exclude_atoms,_ = fkt_Target_Index(Names,arg_exclude_atoms,FIELDS)
 #print "Excluded_Atoms:", arg_exclude_atoms,"\n"
 
 ### Define Field Components (Total,Protein,Solvent,Each residue,Each solvent type) to calculate
