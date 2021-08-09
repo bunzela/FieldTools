@@ -7,6 +7,7 @@ The code to calculted the magnitued of the field vector projected along another 
 ## Content
 - QMChargesTools
 - FieldTools
+- Example data plotting
 
 ## QMChargesTools
 The helpfile can be read with -h -help --help or without providing any flags
