@@ -5,9 +5,8 @@ An example trajectory containing only two frames is provided in ./4bs0/
 The code to calculted the magnitued of the field vector projected along another vector was taken from Stuyver et al., J Comp Chem 2019. 
 
 ## Content
-QMChargesTools
-
-FieldTools
+- QMChargesTools
+- FieldTools
 
 ## QMChargesTools
 The helpfile can be read with -h -help --help or without providing any flags
