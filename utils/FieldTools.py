@@ -32,7 +32,7 @@ def Field_of_ABC_at_XYZ(_ABC,_XYZ,_Charge):
     _Length = np.linalg.norm(_Vector)
     _Normalized_Vector = (-1.0)*_Vector/_Length
     _Length_Bohr = _Length/0.529177249           # Bohr
-    _Field = (_Couloumb_Const*_Charge/(_Length_Bohr**2)) ### For Field only*_Normalized_Vector
+    _Field = (-1)*(_Couloumb_Const*_Charge/(_Length_Bohr**2))
     ### 1 a.u. = 5.14x10^9 V/cm
     ### 1 a.u. = 5.14x10^3 MV/cm
     _Field=_Field*5.14*1000
