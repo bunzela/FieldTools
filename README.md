@@ -1,5 +1,5 @@
 # FieldTools
-FieldTools calculated electric Fields in MD trajectories. It requires an Amber trajectory and parameter file as input. FieldTools can optionally read in user-defined charges, e.g. from QM/MM calculations. QMChargesTools can be used to calculate ChelpG charges for QM regions over the trajectory. 
+FieldTools is quantifying electric fields in MD trajectories. The script requires an Amber trajectory and parameter file as input. A -target file needs to be provided that specifies the positions at which the field should be calculated. FieldTools can optionally read in user-defined charges, e.g. from QM/MM calculations. QMChargesTools can be used to calculate ChelpG charges for QM regions over the trajectory. 
 
 An example trajectory containing only two frames is provided in ./4bs0/
 The code to calculted the magnitued of the field vector projected along another vector was taken from Stuyver et al., J Comp Chem 2019. 
