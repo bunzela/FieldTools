@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[ ]:
+
+
 import sys
 import os
 import subprocess
@@ -176,13 +179,15 @@ def fkt_Load_Trajectory(arg_nc,arg_param,arg_pdb):
         Names[i] = [temp[2], temp[3], temp[4]]   
     return (Trajectory, Charges, np.array(Names))
  
-def make_pdb(arg_tmp_dir,arg_nc,arg_param,arg_pdb):
+def make_pdb(arg_tmp_dir,arg_nc,arg_param,arg_pdb,arg_use_qmcharges):
     cpptraj = """parm """+arg_param+"""
 trajin """+arg_nc+"""
 autoimage    
-outtraj """+arg_pdb+""" onlyframes -1
-strip !("""+arg_qm_mask+""")
-outtraj """+".".join(arg_out.split(".")[:-1])+""".pdb onlyframes -1
+outtraj """+arg_pdb+""" onlyframes -1 """
+    if arg_use_qmcharges == "True":
+        cpptraj +="""strip !("""+arg_qm_mask+""")
+"""
+    cpptraj +="""outtraj """+".".join(arg_out.split(".")[:-1])+""".pdb onlyframes -1
 """
     with open(arg_tmp_dir+"cpptraj.in", "w") as f:
         f.write(cpptraj)  
@@ -324,7 +329,8 @@ arg_solvent = arg_solvent.split(",")
 print "\nField calculation RUNNING : ",datetime.datetime.now() 
 
 #Load qm_mask.in
-arg_qm_mask = load_qm_mask(arg_qm_mask)
+if arg_use_qmcharges == "True":
+    arg_qm_mask = load_qm_mask(arg_qm_mask)
 
 ### Empty dictionary storing all Fields
 FIELDS = {}
@@ -334,7 +340,7 @@ make_tmpdir(arg_tmp_dir)
 
 ### Make pdb of system and qm_mm region
 arg_pdb = ".".join(arg_out.split(".")[:-1])+"_full.pdb"
-make_pdb(arg_tmp_dir,arg_nc,arg_param,arg_pdb)
+make_pdb(arg_tmp_dir,arg_nc,arg_param,arg_pdb,arg_use_qmcharges)
 
 ### Load QM charges
 if arg_use_qmcharges == "True":
@@ -391,4 +397,3 @@ for Frame_i in range(0,len(Trajectory),1):
         
 print "\nField calculation DONE : ",datetime.datetime.now()         
 pickle.dump(FIELDS,open(arg_out,"wb"))
-
