@@ -1,4 +1,5 @@
 # FieldTools
+<a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools%20Tutorial.ipynb">
 FieldTools is quantifying electric fields in MD trajectories. The script requires an Amber trajectory and parameter file as input. A -target file needs to be provided that specifies the positions at which the field should be calculated. FieldTools can optionally read in user-defined charges, e.g. from QM/MM calculations. QMChargesTools can be used to calculate ChelpG charges for QM regions over the trajectory. 
 
 An example trajectory containing only two frames is provided in ./4bs0/
