@@ -40,7 +40,7 @@ Please cite the following paper when using FieldTools:
 **H. Jabben et al., bioRxiv 2023**. 
 
 > [!NOTE]  
-> Compare to the published version, the FieldTools.py script provided here uses MDtraj instead of pytraj, because pytraj cannot readily installed in Google Colab
+> Compared to the published version of FieldTools, the FieldTools.py script provided here uses MDtraj instead of pytraj, because pytraj cannot be readily installed in Google Colab.
 
 ### Contact
 For questions, help, or to report any bugs, please feel free to reach out to me at [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch).
