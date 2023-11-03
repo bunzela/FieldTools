@@ -3,9 +3,9 @@
 FieldTools calculates electric fields in MD trajectories. The script requires standard MD **trajectory** and **parameter** files as input.
 Furthermore a **target** file needs to be provided that specifies the positions at which the field will be calculated.
 
-<font color="red">**Attention: Trajectories must be immaged!**</font>
+<span style="color:red">**Attention: Trajectories must be imaged!**</span>
 
-<font color="red">FieldTools calculates the fields from the exact location of all atoms in the simulation without considiring periodicity.</font>
+<span style="color:red">FieldTools calculates the fields from the exact location of all atoms in the simulation without considering periodicity.</span>
 
 To test field tools, click on: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -13,7 +13,7 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 ---
 
 ### Requirements
-- python3.X
+- Python3.X
 - MDanalysis (install using pip install mdanalysis)
 
 
@@ -34,13 +34,11 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 
                                -out <output file> 
 
-**Note:** FieldTools can also calculate QM/MM point charges for a more refined field analysis (still experimental!).
-
-Please contact [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch) fur early access.
+**Note:** FieldTools can also calculate QM/MM point charges for a more refined field analysis (still experimental!). Contact [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch) for early access.
 
 ### Citation
 Please cite the following paper when using FieldTools:
-H. Jabben et al., bioRxiv 2023. 
+**H. Jabben et al., bioRxiv 2023**. 
 
 ### Contact
 For questions, help, or to report any bugs, please feel free to reach out to me at [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch).
