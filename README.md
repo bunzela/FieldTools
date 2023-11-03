@@ -1,6 +1,11 @@
 # FieldTools
 
-FieldTools calculates electric fields in MD trajectories. The script requires a trajectory and parameter file as input. A -target file needs to be provided that specifies the positions at which the field should be calculated.
+FieldTools calculates electric fields in MD trajectories. The script requires standard MD **trajectory** and **parameter** files as input.
+Furthermore a **target** file needs to be provided that specifies the positions at which the field will be calculated.
+
+<font color="red">**Attention: Trajectories must be immaged!**</font>
+
+<font color="red">FieldTools calculates the fields from the exact location of all atoms in the simulation without considiring periodicity.</font>
 
 To test field tools, click on: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
