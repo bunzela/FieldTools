@@ -233,7 +233,7 @@ def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
 
     traj = md.load(arg_nc, top=arg_param)
     Trajectory = traj.xyz
-    Charges = [atom.element.charge for atom in traj.topology.atoms]
+    Charges = [atom.charge for atom in traj.topology.atoms]
     Names = [atom.name for atom in traj.topology.atoms]
     AtomResid = [atom.residue.index for atom in traj.topology.atoms]
     ResidueNames = [residue.name for residue in traj.topology.residues]
