@@ -4,7 +4,8 @@ import subprocess
 import numpy as np  
 import pickle
 import datetime
-import mdtraj as md
+#import mdtraj as md
+import MDAnalysis as mda
 
 print("test")
 
@@ -230,7 +231,7 @@ def fkt_get_Target_XYZ(Frame,Target_Index):
     return Target_XYZ #Passed to Target_Index in main!
 
 def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
-
+    '''
     traj = md.load(arg_nc, top=arg_param)
     Trajectory = traj.xyz
     Charges = [atom.charge for atom in traj.topology.atoms]
@@ -238,7 +239,16 @@ def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
     AtomResid = [atom.residue.index for atom in traj.topology.atoms]
     ResidueNames = [residue.name for residue in traj.topology.residues]
     ResidueNumbers = [residue.index + 1 for residue in traj.topology.residues]
-    
+    '''
+
+    u = mda.Universe(arg_param, arg_nc)
+    Trajectory = u.trajectory
+    Charges = u.atoms.charges
+    Names = u.atoms.names
+    AtomResid = u.atoms.resids
+    ResidueNames = u.residues.resnames
+    ResidueNumbers = u.residues.resindices + 1
+
     for Name_i in range(0,len(Names),1):
         ###########    AtommName ,                       ResName ,                           ResiNR
         ###########            0 ,                             1 ,                                2      
