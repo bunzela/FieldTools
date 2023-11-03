@@ -249,11 +249,13 @@ def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
     ResidueNames = u.residues.resnames
     ResidueNumbers = u.residues.resindices
 
+
+    print(len(Names),len(ResidueNames),len(ResidueNumbers),len(AtomResid))
+    
     for Name_i in range(0,len(Names),1):
 
-        print(Names[Name_i])
+        print(AtomResid[Name_i])
         print(ResidueNames[AtomResid[Name_i]])
-        print(ResidueNumbers[AtomResid[Name_i]])
 
         ###########    AtommName ,                       ResName ,                           ResiNR
         ###########            0 ,                             1 ,                                2      
