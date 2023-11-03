@@ -6,8 +6,7 @@ import pickle
 import datetime
 #import mdtraj as md
 import MDAnalysis as mda
-
-print("test")
+import warnings
 
 def ResNr_from_ResName(ResName, Names):
     for Name_i in range(0,len(Names),1):
@@ -231,31 +230,18 @@ def fkt_get_Target_XYZ(Frame,Target_Index):
     return Target_XYZ #Passed to Target_Index in main!
 
 def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
-    '''
-    traj = md.load(arg_nc, top=arg_param)
-    Trajectory = traj.xyz
-    Charges = [atom.charge for atom in traj.topology.atoms]
-    Names = [atom.name for atom in traj.topology.atoms]
-    AtomResid = [atom.residue.index for atom in traj.topology.atoms]
-    ResidueNames = [residue.name for residue in traj.topology.residues]
-    ResidueNumbers = [residue.index + 1 for residue in traj.topology.residues]
-    '''
 
-    u = mda.Universe(arg_param, arg_nc)
-    Trajectory = u.trajectory
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore', category=UserWarning)
+        u = mda.Universe(arg_param, arg_nc)
+    Trajectory = u.trajectory.timeseries()
     Charges = u.atoms.charges
     Names = u.atoms.names
-    AtomResid = u.atoms.resids
+    AtomResid = u.atoms.resindices
     ResidueNames = u.residues.resnames
-    ResidueNumbers = u.residues.resindices
-
-
-    print(len(Names),len(ResidueNames),len(ResidueNumbers),len(AtomResid))
+    ResidueNumbers = u.residues.resids
     
     for Name_i in range(0,len(Names),1):
-
-        print(AtomResid[Name_i])
-        print(ResidueNames[AtomResid[Name_i]])
 
         ###########    AtommName ,                       ResName ,                           ResiNR
         ###########            0 ,                             1 ,                                2      
