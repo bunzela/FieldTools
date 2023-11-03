@@ -4,7 +4,7 @@ import subprocess
 import numpy as np  
 import pickle
 import datetime
-import pytraj as pt
+import mdtraj as md
 
 def ResNr_from_ResName(ResName, Names):
     for Name_i in range(0,len(Names),1):
@@ -229,13 +229,13 @@ def fkt_get_Target_XYZ(Frame,Target_Index):
 
 def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
 
-    traj = pt.load(arg_nc, arg_param) 
+    traj = md.load(arg_nc, top=arg_param)
     Trajectory = traj.xyz
-    Charges = traj.topology.charge
-    Names          = [str(atom.name)       for atom in traj.topology.atoms]
-    AtomResid      = [atom.resid           for atom in traj.topology.atoms]
-    ResidueNames   = [str(residue.name)    for residue in traj.topology.residues]
-    ResidueNumbers = [str(residue.index+1) for residue in traj.topology.residues]
+    Charges = [atom.element.charge for atom in traj.topology.atoms]
+    Names = [atom.name for atom in traj.topology.atoms]
+    AtomResid = [atom.residue.index for atom in traj.topology.atoms]
+    ResidueNames = [residue.name for residue in traj.topology.residues]
+    ResidueNumbers = [residue.index + 1 for residue in traj.topology.residues]
     
     for Name_i in range(0,len(Names),1):
         ###########    AtommName ,                       ResName ,                           ResiNR
