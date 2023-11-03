@@ -19,15 +19,24 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 
 ### Usage
 python utils/FieldTools.py -nc <trajectory file> 
+
                            -parm <parameter file> 
+
                            -target <target file> 
+
                            [-solvent <non-protein residues>]
+
                            [-exclude_atoms <exclusion list>] 
+
                            [-TIP4P <True|False>] 
+
                            [-verbose <True|False>] 
+                           
                            -out <output file> 
 
-#### FieldTools can calculate QM/MM point charges for a more refined field calcualtion (still experimental!). Please contact [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch) fur early access.
+**Note:** FieldTools can also calculate QM/MM point charges for a more refined field analysis (still experimental!).
+
+Please contact [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch) fur early access.
 
 ### Citation
 Please cite the following paper when using FieldTools:
