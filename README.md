@@ -3,7 +3,6 @@
 FieldTools.py can be used to calculate electric fields from MD trajectories. The script requires standard MD **trajectory** and **parameter** files as input.
 Furthermore a **target** file needs to be provided that specifies the positions at which the field will be calculated.
 
----
 To test field tools, click on: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
@@ -39,6 +38,9 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 ### Citation
 Please cite the following paper when using FieldTools:
 **H. Jabben et al., bioRxiv 2023**. 
+
+> [!NOTE]  
+> Compare to the published version, the FieldTools.py script provided here uses MDtraj instead of pytraj, because pytraj cannot readily installed in Google Colab
 
 ### Contact
 For questions, help, or to report any bugs, please feel free to reach out to me at [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch).
