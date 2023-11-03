@@ -6,11 +6,10 @@ Furthermore a **target** file needs to be provided that specifies the positions 
 To test field tools, click on: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
----
 
 > [!NOTE]  
-> Fields are either calcualted at an atom or along a bond (defined by the **target** file). <br /> 
-> To define a target, use amber selection masks. <br />
+> Fields are defined in the **target** file and are either calcualted at an atom or along a bond. <br /> 
+> To define a target, use amber selection masks to select either one (atom) or two (bond) atoms. <br />
 > Several targets can be calculated in parallel, by adding additional lines to the **target** file
 
 > [!WARNING]  
