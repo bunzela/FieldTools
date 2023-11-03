@@ -9,15 +9,12 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 ---
 
 > [!NOTE]  
-> Fields are either calcualted at an atom or along a bond (defined by the **target** file). 
->
-> To define a target, use amber selection masks.
->
+> Fields are either calcualted at an atom or along a bond (defined by the **target** file). <br /> 
+> To define a target, use amber selection masks. <br />
 > Several targets can be calculated in parallel, by adding additional lines to the **target** file
 
 > [!WARNING]  
-> FieldTools calculates the fields from the exact location of all atoms in the system without considering periodicity.
->
+> FieldTools calculates the fields from the exact location of all atoms in the system without considering periodicity. <br />
 > Trajectories must thus be imaged!
 
 ### Requirements
@@ -25,25 +22,17 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 - MDanalysis (install using pip install mdanalysis)
 
 ### Usage
-    python utils/FieldTools.py -nc <trajectory file> 
-
-                               -parm <parameter file> 
-
-                               -target <target file> 
-
-                               [-solvent <non-protein residues>]
-  
-                               [-exclude_atoms <exclusion list>] 
-  
-                               [-TIP4P <True|False>] 
-
-                               [-verbose <True|False>] 
-
+    python utils/FieldTools.py -nc <trajectory file>             <br />
+                               -parm <parameter file>            <br />
+                               -target <target file>             <br />
+                               [-solvent <non-protein residues>] <br /> 
+                               [-exclude_atoms <exclusion list>] <br /> 
+                               [-TIP4P <True|False>]             <br />
+                               [-verbose <True|False>]           <br />
                                -out <output file> 
 
 > [!NOTE]  
-> FieldTools can also calculate QM/MM point charges for a more refined field analysis (still experimental!).
->
+> FieldTools can also calculate QM/MM point charges for a more refined field analysis (still experimental!). <br />
 > Contact [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch) for early access.
 
 ### Citation
