@@ -1,19 +1,21 @@
 # FieldTools
 
-FieldTools calculates electric fields in MD trajectories. The script requires standard MD **trajectory** and **parameter** files as input.
+FieldTools.py can be used to calculate electric fields from MD trajectories. The script requires standard MD **trajectory** and **parameter** files as input.
 Furthermore a **target** file needs to be provided that specifies the positions at which the field will be calculated.
 
+---
 To test field tools, click on: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+---
 
 > [!NOTE]  
-> Fields are defined in the **target** file and are either calcualted at an atom or along a bond. <br /> 
-> To define a target, use amber selection masks to select either one (atom) or two (bond) atoms. <br />
+> Fields are defined in the **target** file and are either calcualted at an atom or along a bond. 
+> To define a target, use amber selection masks to select either one (atom) or two (bond) atoms. 
 > Several targets can be calculated in parallel, by adding additional lines to the **target** file
 
 > [!WARNING]  
-> FieldTools calculates the fields from the exact location of all atoms in the system without considering periodicity. <br />
+> FieldTools calculates the fields from the exact location of all atoms in the system without considering periodicity. 
 > Trajectories must thus be imaged!
 
 ### Requirements
@@ -21,13 +23,13 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 - MDanalysis (install using pip install mdanalysis)
 
 ### Usage
-    python utils/FieldTools.py -nc <trajectory file>             <br />
-                               -parm <parameter file>            <br />
-                               -target <target file>             <br />
-                               [-solvent <non-protein residues>] <br /> 
-                               [-exclude_atoms <exclusion list>] <br /> 
-                               [-TIP4P <True|False>]             <br />
-                               [-verbose <True|False>]           <br />
+    python utils/FieldTools.py -nc <trajectory file>              
+                               -parm <parameter file>             
+                               -target <target file>              
+                               [-solvent <non-protein residues>]  
+                               [-exclude_atoms <exclusion list>]  
+                               [-TIP4P <True|False>]               
+                               [-verbose <True|False>]             
                                -out <output file> 
 
 > [!NOTE]  
