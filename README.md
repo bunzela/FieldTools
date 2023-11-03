@@ -1,5 +1,5 @@
 # FieldTools
-FieldTools: <a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools%20Tutorial.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/bunzela/FieldTools/blob/main/FieldTools%20Tutorial.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
   
