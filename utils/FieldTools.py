@@ -6,6 +6,8 @@ import pickle
 import datetime
 import mdtraj as md
 
+print("test")
+
 def ResNr_from_ResName(ResName, Names):
     for Name_i in range(0,len(Names),1):
         if ResName == Names[Name_i][1]:
