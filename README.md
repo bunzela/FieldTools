@@ -10,7 +10,7 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 
 > [!NOTE]  
 > Fields are defined in the **target** file and are either calcualted at an atom or along a bond. 
-> To define a target, use amber selection masks to select either one (atom) or two (bond) atoms. 
+> To define a target, use Amber selection masks to select either one (atom) or two (bond) atoms. 
 > Several targets can be calculated in parallel, by adding additional lines to the **target** file
 
 > [!WARNING]  
@@ -43,4 +43,4 @@ Please cite the following paper when using FieldTools:
 > Compared to the published version of FieldTools, the FieldTools.py script provided here uses MDtraj instead of pytraj, because pytraj cannot be readily installed in Google Colab.
 
 ### Contact
-For questions, help, or to report any bugs, please feel free to reach out to me at [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch).
+For questions, help, or to report any bugs, please feel free to reach out to [adrian.bunzel@bsse.ethz.ch](mailto:adrian.bunzel@bsse.ethz.ch).
