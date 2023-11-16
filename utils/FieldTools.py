@@ -139,10 +139,11 @@ def fkt_calc_fields(FIELDS,FIELD,XYZ,VEC,Frame,Charges,Names,Field_Components,ar
 def fkt_Field_Components(FIELDS,Names,arg_solvent):
     
     Field_Components = ["Total","Protein","Solvent"]+arg_solvent
-    
+
     for Name in Names:
         if Name[1] not in arg_solvent:
-            if Name[1]+"_"+Name[2] not in Field_Components: Field_Components += [Name[1]+"_"+Name[2]] 
+            if Name[1]+"_"+Name[2] not in Field_Components: 
+                Field_Components += [Name[1]+"_"+Name[2]] 
 
     for Field in FIELDS:
         for Field_Component in Field_Components:
@@ -243,9 +244,9 @@ def fkt_Load_Trajectory(arg_nc,arg_param,arg_TIP4P):
     
     for Name_i in range(0,len(Names),1):
 
-        ###########    AtommName ,                       ResName ,                           ResiNR
-        ###########            0 ,                             1 ,                                2      
-        Names[Name_i] = [Names[Name_i],ResidueNames[AtomResid[Name_i]],ResidueNumbers[AtomResid[Name_i]]]
+        ###########         AtommName ,                       ResName ,                                ResiNR
+        ###########                 0 ,                             1 ,                                     2      
+        Names[Name_i] = [Names[Name_i],ResidueNames[AtomResid[Name_i]],str(ResidueNumbers[AtomResid[Name_i]])]
         #if ResidueNumbers[AtomResid[Name_i]] in ["211","212"]:
         #    print Names[Name_i], Charges[Name_i]
         
