@@ -373,7 +373,14 @@ def inputParser(arg):
         else:
             print ("Error! "+param+" not a valid option.")
             usage()
-            quit()  
+            quit() 
+
+    ### If exclude_atoms does not contain any atoms or just "False", set arg_exclude_atoms to False
+    with open(arg_exclude_atoms) as f:
+        Excludes = f.readlines()
+    if Excludes in [[],["False"]]:
+        arg_exclude_atoms = "False" 
+        
                                                                                                       ### Add new flag here
     if arg_nc        == False: print ("ERROR. Please specify the name of the trajectory file with -nc")  
     if arg_param     == False: print ("ERROR. Please specify the name of the parameter file with -parm")
