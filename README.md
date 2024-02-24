@@ -37,7 +37,7 @@ To test field tools, click on: <a target="_blank" href="https://colab.research.g
 
 ### Citation
 Please cite the following paper when using FieldTools:
-**H. Jabben et al., bioRxiv 2023**. 
+**H. Jabeen et al., bioRxiv 2023**. 
 
 > [!NOTE]  
 > Compared to the published version of FieldTools, the FieldTools.py script provided here uses MDtraj instead of pytraj, because pytraj cannot be readily installed in Google Colab.
