@@ -1,0 +1,15 @@
+# Site settings
+title: "Your awesome title"
+email: "your-email@example.com"
+description: "Write an awesome description for your new site here."
+baseurl: "/FieldTools/website" # the subpath of your site
+url: "" # the base hostname & protocol for your site, e.g., http://example.com
+
+# Social
+twitter_username: "jekyllrb"
+github_username: "jekyll"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
