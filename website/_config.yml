@@ -4,7 +4,16 @@ email: "your-email@example.com"
 description: "Write an awesome description for your new site here."
 baseurl: "/FieldTools/website" # the subpath of your site
 url: "" # the base hostname & protocol for your site, e.g., http://example.com
+
+# Theme settings
 remote_theme: pmarsceill/just-the-docs
+just_the_docs:
+  show_toc: true
+  toc_levels: 1..3
+  search_enabled: true
+  nav_order: 1
+  aux_links:
+    "GitHub Repository": "https://github.com/bunzela/FieldTools"
 
 # Social
 twitter_username: "jekyllrb"
